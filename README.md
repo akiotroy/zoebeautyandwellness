@@ -318,8 +318,8 @@ $('#info').innerHTML=[['Phone',SITE.phone],['WhatsApp',SITE.whatsappNumber],['Em
 /* shop */
 let cat=CATS[0],basket=0;
 function drawShop(){
- $('#cats').innerHTML=CATS.map(c=>`<button role="tab" aria-selected="${c===cat}" class="${c===cat?'sel':''}" data-c="${c}">${c}</button>`).join('');
- $('#prods').innerHTML=PRODUCTS.filter(p=>p.cat===cat).map(p=>`<article class="card prod"><div class="im ph"><img src="${p.img}" alt="${p.name}" loading="lazy"></div><h3 style="font:500 1.3rem 'Cormorant Garamond',serif;letter-spacing:0;text-transform:none;color:var(--ink)">${p.name}</h3><p style="font-size:14px;margin:8px 0">${p.desc}</p><p class="price" style="margin-bottom:14px">R${p.price}</p><button class="btn out add" style="width:100%">Add to basket</button></article>`).join('');
+   $('#cats').innerHTML=CATS.map(c=>`<button role="tab" aria-selected="${c===cat}" class="${c===cat?'sel':''}" data-c="${c}">${c}</button>`).join('');
+   $('#prods').innerHTML=PRODUCTS.filter(p=>p.cat===cat).map(p=>`<article class="card prod"><div class="im ph"><img src="${p.img}" alt="${p.name}" loading="lazy"></div><h3 style="font:500 1.3rem 'Cormorant Garamond',serif;letter-spacing:0;text-transform:none;color:var(--ink)">${p.name}</h3><p style="font-size:14px;margin:8px 0">${p.desc}</p><p class="price" style="margin-bottom:14px">R${p.price}</p><button class="btn out add" style="width:100%">Add to basket</button></article>`).join('');
 }
 drawShop();
 $('#cats').onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;drawShop()}};
