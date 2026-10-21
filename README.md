@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zoë Beauty & Wellness</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -247,7 +246,7 @@ const SITE={
   phone:'[Phone number]', whatsappNumber:'[WhatsApp number]', email:'[Email address]', address:'[Full address]',
   area:'Centurion, South Africa',
   instagram:'https://instagram.com/zoe.beautywellness', handle:'@zoe.beautywellness',
-  whatsapp:'https://wa.me/27000000000?text=Hi%20Zo%C3%AB%2C%20I%27d%20like%20to%20book'
+  whatsapp:'https://wa.me/27000000000?text=Hi%20Zo%C3%AB%2C%20I%27d%20like%20to%20book' // TODO: replace with real number
 };
 
 /* Moodboard Imagery Mapping */
@@ -262,7 +261,10 @@ const IMAGES = {
   's-brows': 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80',
   's-facials': 'https://images.unsplash.com/photo-1512290900673-7002ddb928f0?auto=format&fit=crop&w=400&q=80',
   's-massage': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80',
-  's-retail': 'https://images.unsplash.com/photo-1608248597261-833258657640?auto=format&fit=crop&w=400&q=80'
+  's-retail': 'https://images.unsplash.com/photo-1608248597261-833258657640?auto=format&fit=crop&w=400&q=80',
+  prod1: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80',
+  prod2: 'https://images.unsplash.com/photo-1608248597261-833258657640?auto=format&fit=crop&w=600&q=80',
+  prod3: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80'
 };
 
 const SERVICES=[
@@ -276,22 +278,7 @@ const SERVICES=[
 const WHY=['Personalised care','Calm environment','Small intimate studio','Quality products','Hygiene','Self-care','Beauty and wellness together'];
 const VALUES=[['Calm','A quiet room, soft light and no rush.'],['Renew','Leave feeling refreshed, inside and out.'],['Balance','Beauty and wellness, side by side.'],['Self care','Not a luxury, a necessity.']];
 const CATS=['Skincare','Body care','Nail care','Gift ideas'];
-
-const PROD_IMAGES = [
-  'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1608248597261-833258657640?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80'
-];
-
-const PRODUCTS = CATS.flatMap((c, i) => [1, 2].map((n, idx) => ({
-  cat: c,
-  name: c + ' Essential ' + n,
-  desc: 'Handcrafted gentle formulation for daily care.',
-  price: [120, 250, 80, 450][i] + n * 30,
-  img: PROD_IMAGES[(i * 2 + idx) % PROD_IMAGES.length]
-})));
-
+const PRODUCTS=CATS.flatMap((c,i)=>[1,2].map(n=>({cat:c,name:'Nourishing '+c+' '+n,desc:'Handcrafted gentle formulation for daily care.',price:[120,250,80,450][i]+n*30,img:[IMAGES.prod1,IMAGES.prod2,IMAGES.prod3][(i+n)%3]})));
 const GALLERY=['flowers','shelf','nails','chair','tea','room'];
 const NAV=[['Home','/'],['Services','/services'],['About','/about'],['Book','/book'],['Shop','/shop'],['Gift Vouchers','/gift-vouchers'],['Contact','/contact']];
 
